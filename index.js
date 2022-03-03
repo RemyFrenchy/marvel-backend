@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
 });
 
 app.all("*", (req, res) => {
-  res.status(404).json({ message: "Page not found" });
+  res.status(404).json({ message: "Page inexistante" });
 });
 
 app.listen(process.env.PORT, () => {
