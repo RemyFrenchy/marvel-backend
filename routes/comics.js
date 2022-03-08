@@ -38,4 +38,18 @@ router.get("/comics/:characters", async (req, res) => {
     res.status(400).json({ message: error.message });
   }
 });
+
+router.get("/comic/:comicId", async (req, res) => {
+  try {
+    const comicId = req.params.comicId;
+    const response = await axios.get(
+      `https://lereacteur-marvel-api.herokuapp.com/comics/${comicId}?&apiKey=${process.env.MARVEL_API_KEY}`
+    );
+    res.status(200).json(response.data);
+    console.log(response);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+});
+
 module.exports = router;
