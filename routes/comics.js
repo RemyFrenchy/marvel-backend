@@ -10,8 +10,6 @@ router.get("/comics", async (req, res) => {
 
     if (req.query.title) {
       title = req.query.title;
-    } else {
-      title = "";
     }
     if (req.query.page > 1) {
       skip = page * 100 - 100;

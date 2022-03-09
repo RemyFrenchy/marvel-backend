@@ -10,8 +10,6 @@ router.get("/characters", async (req, res) => {
 
     if (req.query.name) {
       name = req.query.name;
-    } else {
-      name = "";
     }
     if (req.query.page > 1) {
       skip = page * 100 - 100;
